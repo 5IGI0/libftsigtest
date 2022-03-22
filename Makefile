@@ -1,6 +1,6 @@
 LIBFT_PATH ?= ../
 CC = gcc
-TESTS = ft_split
+TESTS = ft_split ft_calloc
 
 all: $(TESTS)
 
