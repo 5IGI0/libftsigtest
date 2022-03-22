@@ -24,13 +24,17 @@ int main(void)
     strs = ft_split("a a  a a  a a a  a     aa a  a a a    a a a  a a   a ", ' ');
     UNSET_MMX();
     still_alive = GET_MALIVE() - start;
-    if (still_alive == 0)
+    if (strs)
+    {
+        printf(CLR_RED"1.KO (%zd/non-null return) ", still_alive);
+    }
+    else if (still_alive == 0)
         STDOUT_WRITE(CLR_GRN"1.OK ");
     else
     {
-        printf(CLR_RED"1.KO (%zd) ", GET_MALIVE() - start);
-        fflush(stdout);
+        printf(CLR_RED"1.KO (%zd) ", still_alive);
     }
+    fflush(stdout);
 
     /* 2. x malloc crashes */
     SET_MMX(7);
@@ -38,13 +42,17 @@ int main(void)
     strs = ft_split("a a  a a  a a a  a     aa a  a a a    a a a  a a   a ", ' ');
     UNSET_MMX();
     still_alive = GET_MALIVE() - start;
-    if (still_alive == 0)
+    if (strs)
+    {
+        printf(CLR_RED"2.KO (%zd/non-null return) ", still_alive);
+    }
+    else if (still_alive == 0)
         STDOUT_WRITE(CLR_GRN"2.OK ");
     else
     {
-        printf(CLR_RED"2.KO (%zd) ", GET_MALIVE() - start);
-        fflush(stdout);
+        printf(CLR_RED"2.KO (%zd) ", still_alive);
     }
+    fflush(stdout);
 
     STDOUT_WRITE(CLR_RST"\n");
 }
