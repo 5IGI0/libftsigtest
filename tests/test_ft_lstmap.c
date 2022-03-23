@@ -14,13 +14,11 @@ int count = 0;
 void *f(void *elem)
 {
     count++;
-    write(1, "f, ", 3);
     return (void *)elem;
 }
 
 void del(void *elem)
 {
-    write(1, "d, ", 3);
     count--;
 }
 
