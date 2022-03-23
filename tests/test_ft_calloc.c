@@ -36,7 +36,7 @@ int main(void) {
 
     /* 3. integer overflow */
     SET_MMX(1);
-    ptr = ft_calloc((((size_t)-1)>>(sizeof(size_t)>>2)) + 1, (((size_t)-1)>>(sizeof(size_t)>>2)) + 1);
+    ptr = ft_calloc(((size_t)1)<<(sizeof(size_t)<<2), ((size_t)1)<<(sizeof(size_t)<<2));
     UNSET_MMX();
     if (ptr)
         STDOUT_WRITE(CLR_RED"3.KO (non-null return) ");
