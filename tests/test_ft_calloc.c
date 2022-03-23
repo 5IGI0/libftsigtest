@@ -9,13 +9,12 @@
 #include "../common/macros.h"
 #include "../common/sighandle.h"
 
-
 int main(void) {
     void *ptr;
 
     setup_sighandle();
     
-    STDOUT_WRITE(CLR_RST"ft_calloc\t: ");
+    STDOUT_WRITE(CLR_RST"ft_calloc      : ");
 
     /* 1. check for 0 bytes allocation */
     SET_MMX(1);

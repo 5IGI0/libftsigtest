@@ -16,7 +16,7 @@ int main(void)
 
     setup_sighandle();
     
-    STDOUT_WRITE(CLR_RST"ft_split\t: ");
+    STDOUT_WRITE(CLR_RST"ft_split       : ");
 
     /* 1. first malloc crashes */
     SET_MMX(0);
